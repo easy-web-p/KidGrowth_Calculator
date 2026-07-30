@@ -21,8 +21,8 @@ export default function Navbar({ activeTab, setActiveTab }) {
           {/* เรียกใช้ไฟล์ logo.png และปรับขนาดให้พอดี ไม่เบียด */}
           <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-1.5 shadow-xs border border-slate-100 group-hover:scale-105 transition-transform duration-200">
             <img 
-              src="/logo.png" 
-              alt="KidGrowth Logo" 
+              src="/public/logo.jpg" 
+              //alt="KidGrowth Logo" //
               className="w-full h-full object-contain"
             />
           </div>
