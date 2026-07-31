@@ -5,14 +5,14 @@ import confetti from 'canvas-confetti';
 
 export default function HeightPredictorForm({ onResultComputed }) {
   // Input States
-  const [name, setName] = useState('น้องมาร์ค');
-  const [gender, setGender] = useState('boy'); // boy | girl
-  const [age, setAge] = useState('6');
-  const [weight, setWeight] = useState('22');
-  const [height, setHeight] = useState('116');
-  const [fatherHeight, setFatherHeight] = useState('175');
-  const [motherHeight, setMotherHeight] = useState('160');
-  const [sleepHours, setSleepHours] = useState('9.5');
+  const [name, setName] = useState('');
+  const [gender, setGender] = useState(''); // boy | girl
+  const [age, setAge] = useState('');
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [fatherHeight, setFatherHeight] = useState('');
+  const [motherHeight, setMotherHeight] = useState('');
+  const [sleepHours, setSleepHours] = useState('');
 
   // Computed results state
   const [result, setResult] = useState(null);

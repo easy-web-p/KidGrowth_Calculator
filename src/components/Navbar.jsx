@@ -11,18 +11,17 @@ export default function Navbar({ activeTab, setActiveTab }) {
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex flex-col md:flex-row items-center justify-between gap-4 py-4 md:py-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 flex flex-col md:flex-row items-center justify-between gap-4 py-4 md:py-0">
         
-        {/* Logo & Branding */}
+        {/* Logo & Branding: จัดกลางบน iPad/Mobile และชิดซ้ายบน Desktop */}
         <button 
           onClick={() => setActiveTab('calculator')}
-          className="flex items-center gap-3.5 focus:outline-hidden group text-left cursor-pointer transition-transform duration-200 active:scale-98"
+          className="flex items-center gap-3.5 focus:outline-hidden group text-left cursor-pointer transition-transform duration-200 active:scale-98 mx-auto md:mx-0"
         >
-          {/* เรียกใช้ไฟล์ logo.png และปรับขนาดให้พอดี ไม่เบียด */}
           <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-1.5 shadow-xs border border-slate-100 group-hover:scale-105 transition-transform duration-200">
             <img 
-              src="/public/logo.jpg" 
-              //alt="KidGrowth Logo" //
+              src='/public/logo.jpg'
+              alt="KidGrowth Logo" 
               className="w-full h-full object-contain"
             />
           </div>
@@ -36,8 +35,8 @@ export default function Navbar({ activeTab, setActiveTab }) {
           </div>
         </button>
 
-        {/* Navigation - รองรับ Responsive หลากหน้าจอ */}
-        <nav className="flex flex-wrap justify-center items-center gap-1.5 bg-slate-50 p-1.5 rounded-2xl border border-slate-100 max-w-full overflow-x-auto no-scrollbar">
+        {/* Navigation Buttons: ซ่อนบน Mobile (hidden), แสดงบน iPad (sm:flex), เรียงปกติบน PC (md:flex) */}
+        <nav className="hidden sm:flex flex-wrap justify-center items-center gap-2 pb-2 md:pb-0">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -45,13 +44,13 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   isActive
-                    ? 'bg-white text-emerald-700 shadow-sm border border-slate-200/80 scale-102'
-                    : 'text-slate-600 hover:text-emerald-600 hover:bg-white/60'
+                    ? 'bg-emerald-50 text-emerald-600 shadow-xs border border-emerald-100'
+                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                 }`}
               >
-                <Icon className={`w-4 h-4 transition-colors duration-200 ${isActive ? 'text-emerald-600' : 'text-slate-400 group-hover:text-emerald-500'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-emerald-500' : 'text-slate-400'}`} />
                 <span>{item.label}</span>
               </button>
             );

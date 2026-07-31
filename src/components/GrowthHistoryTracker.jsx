@@ -64,18 +64,18 @@ export default function GrowthHistoryTracker({ childResult }) {
 
   const handleExportPdf = () => {
     const childData = childResult?.child || {
-      name: 'น้องมาร์ค',
-      gender: 'boy',
-      age: 6,
-      weight: 22,
-      height: 116,
-      fatherHeight: 175,
-      motherHeight: 160
+      name: '',
+      gender: '',
+      age: '',
+      weight: '',
+      height: '',
+      fatherHeight: '',
+      motherHeight: ''
     };
 
     const predicted = childResult?.predicted || { target: 174, min: 169, max: 179 };
-    const bmiData = childResult?.bmi || { bmi: 16.35, category: 'ปกติ / สมส่วน' };
-    const whoData = childResult?.who || { matchedAge: 6, whoAverageHeight: 116, heightStatus: 'ปกติ' };
+    const bmiData = childResult?.bmi || { bmi: '', category: 'ปกติ / สมส่วน' };
+    const whoData = childResult?.who || { matchedAge: '', whoAverageHeight: '', heightStatus: '' };
     const aiAdvice = {
       overallSummary: 'การเจริญเติบโตอยู่ในเกณฑ์ดี ควรรักษาพฤติกรรมสุขภาพ โภชนาการ และการนอนหลับที่สมดุลอย่างต่อเนื่อง'
     };
